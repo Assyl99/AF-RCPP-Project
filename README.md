@@ -1,9 +1,9 @@
-Before committing I've had .gitignore file that ignored the following files:
+# Before committing I've had .gitignore file that ignored the following files:
 
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
-src/*.o
-src/*.so
-src/*.dll
+- .Rproj.user
+- .Rhistory
+- .RData
+- .Ruserdata
+- src/*.o
+- src/*.so
+- src/*.dll
