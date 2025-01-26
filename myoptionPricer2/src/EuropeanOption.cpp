@@ -93,13 +93,14 @@ double EuropeanOption::getArithmeticEuropeanCallPrice(int nReps){
 //method definition
 double EuropeanOption::getEuropeanUpAndInCallPrice(int nReps){
   double rollingSum = 0.0;
-  double thisMean = 0.0;
-
+  // double thisMean = 0.0; according to the recording we need lastPrice instead of thisMean for european style
+  double lastPrice = 0.0;
   for(int i = 0; i < nReps; i++){
     generatePath();
     double thisMax = *max_element(thisPath.begin(),thisPath.end());
-    thisMean=getArithmeticMean();
-    rollingSum += (thisMean > strike) && (thisMax > barrier) ? (thisMean-strike) : 0;
+    // thisMean=getArithmeticMean();
+    lastPrice = thisPath[thisPath.size()-1];
+    rollingSum += (lastPrice > strike) && (thisMax > barrier) ? (lastPrice-strike) : 0;
   }
 
   return exp(-r*expiry)*rollingSum/double(nReps);
