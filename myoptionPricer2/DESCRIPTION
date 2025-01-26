@@ -1,0 +1,13 @@
+Package: myoptionPricer2
+Type: Package
+Title: Path-dependent option pricing with Monte Carlo
+Version: 0.1.0
+Author: Assyl Salah based on AF material
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: European-style up-and-in call option
+    Use four spaces when indenting paragraphs within the Description.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+Imports: Rcpp (>= 1.0.11)
+LinkingTo: Rcpp
